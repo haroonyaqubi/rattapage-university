@@ -22,9 +22,11 @@ public class Mark {
     private Long id;
 
     @Column(nullable = false)
+    @JsonView(JsonViews.MarkShowView.class)
     private Float value;
 
     @Column(nullable = false)
+    @JsonView(JsonViews.MarkShowView.class)
     private LocalDate createdAt;
 
     @ManyToOne

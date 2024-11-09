@@ -19,19 +19,20 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    @JsonView(JsonViews.StudentShowView.class)
+    @JsonView({JsonViews.StudentShowView.class})
     private String id;
 
     @Column(nullable = false)
-    @JsonView(JsonViews.StudentShowView.class)
+    @JsonView({JsonViews.MarkShowView.class, JsonViews.StudentShowView.class})
     private String first_name;
 
     @Column(nullable = false)
-    @JsonView(JsonViews.StudentShowView.class)
+    @JsonView({JsonViews.MarkShowView.class, JsonViews.StudentShowView.class})
+
     private String last_name;
 
     @Column(nullable = false)
-    @JsonView(JsonViews.StudentShowView.class)
+    @JsonView({JsonViews.StudentShowView.class})
     private String email;
 
     @Column(nullable = false)

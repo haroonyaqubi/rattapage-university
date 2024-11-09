@@ -24,6 +24,7 @@ public class SubjectController {
     }
 
     @GetMapping("/{id}")
+    @JsonView(JsonViews.SubjectShowView.class)
     public Subject show(@PathVariable Long id) {
         return subjectService.findById(id);
     }

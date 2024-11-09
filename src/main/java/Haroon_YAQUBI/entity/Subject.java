@@ -22,7 +22,7 @@ public class Subject {
     private Long id;
 
     @Column(nullable = false)
-    @JsonView(JsonViews.SubjectShowView.class)
+    @JsonView({JsonViews.TeacherShowView.class, JsonViews.SubjectShowView.class})
     private String name;
 
     @Column(nullable = false)
@@ -30,6 +30,7 @@ public class Subject {
     private String code;
 
     @ManyToOne
+    @JsonView(JsonViews.SubjectShowView.class)
     @JoinColumn(nullable = false)
     private Teacher teacher;
 

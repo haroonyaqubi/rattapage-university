@@ -24,7 +24,7 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    @JsonView(JsonViews.StudentShowView.class)
+    @JsonView({JsonViews.StudentShowView.class})
     public Student show(@PathVariable String id) {
         return studentService.findById(id);
     }

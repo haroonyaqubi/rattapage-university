@@ -20,11 +20,11 @@ public class Teacher {
     private String id;
 
     @Column(nullable = false)
-    @JsonView(JsonViews.TeacherShowView.class)
+    @JsonView({JsonViews.SubjectShowView.class, JsonViews.TeacherShowView.class})
     private String first_name;
 
     @Column(nullable = false)
-    @JsonView(JsonViews.TeacherShowView.class)
+    @JsonView({JsonViews.SubjectShowView.class, JsonViews.TeacherShowView.class})
     private String last_name;
 
 }

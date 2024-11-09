@@ -17,6 +17,7 @@ public class MarkController {
     private final MarkService markService;
 
     @PostMapping
+    @JsonView(JsonViews.MarkShowView.class)
     @ResponseStatus(HttpStatus.CREATED)
     public Mark create(@RequestBody MarkDTO markDTO) {
         return markService.createMark(markDTO);

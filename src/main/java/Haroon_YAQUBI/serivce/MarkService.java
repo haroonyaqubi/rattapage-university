@@ -10,6 +10,7 @@ import Haroon_YAQUBI.repository.SubjectRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.yaml.snakeyaml.events.Event;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -27,7 +28,7 @@ public class MarkService {
         Long subjectId = markDTO.getSubjectId();
 
         Student student = studentRepository.findById(String.valueOf(studentId))
-                .orElseThrow(EntityNotFoundException::new);
+                .orElseThrow(() -> new EntityNotFoundException("Student not found with ID: " + studentId));
         Subject subject = subjectRepository.findById(subjectId)
                 .orElseThrow(EntityNotFoundException::new);
 
